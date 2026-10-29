@@ -1,0 +1,31 @@
+name: Release
+
+# При каждой новой версии (обновился update.json) автоматически создаёт Release с этой версией
+# и кладёт в него свежий установщик для игроков.
+on:
+  push:
+    branches: [main]
+    paths: [update.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VER=$(jq -r .version update.json)
+          NOTES=$(jq -r '.notes // ""' update.json)
+          TAG="v$VER"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "$VER" --notes "$NOTES" --latest
+          else
+            gh release create "$TAG" --title "$VER" --notes "$NOTES" --target main --latest
+          fi
+          gh release upload "$TAG" BusVoice_Installer.exe --clobber
