@@ -1,6 +1,6 @@
 {
-  "version": "1.18.8",
+  "version": "1.19.0",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "1a27729e86c2dae0c014ea16905f15fd2bce97fe39f4589af7c711b003ffd4e0",
-  "notes": "Автообновление при входе, громкий информатор, 3D-музыка"
+  "sha256": "a50b51ae59589ffc7a891e1fe7f13658ed4b812f5396523c2bbda8401ce87064",
+  "notes": "Новые звуковые форматы (APE, TAK, WavPack, OptimFROG, DSD, DTS, AC3, WMA и др.), новый фон с автобусами"
 }
