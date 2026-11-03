@@ -1,0 +1,32 @@
+name: 🐞 Ошибка
+description: Что-то работает не так
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Версия BusVoice
+      description: Номер версии виден в программе
+      placeholder: "1.20.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: game
+    attributes:
+      label: Игра
+      options: [OMSI 2, openOMSI]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Что случилось
+      description: Опишите, что вы делали и что пошло не так. Можно приложить скриншот.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Текст ошибки
+      description: Если есть — файл data\crash.log из папки программы
+      render: text
