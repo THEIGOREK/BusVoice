@@ -1,6 +1,6 @@
 {
-  "version": "1.27.0",
+  "version": "1.28.0",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "8e3dba25e84163017468053a2fc108f878f8a51f5b2e8c34f36f647a6aea94e0",
-  "notes": "• Исправлена горячая клавиша «ё» (следующая остановка): ошибка «Key ` is not mapped to any known key» больше не появляется, клавиша привязывается по физическому коду."
+  "sha256": "78bb2d49ba4e328f1b8e649575ccc5ef3e1943319d11ddba26043b6c4a2c9e6f",
+  "notes": "• Все звуки интерфейса заменены на электронные в игровом стиле: клик, наведение, запуск и обновление."
 }
