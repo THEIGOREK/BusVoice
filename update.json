@@ -1,6 +1,6 @@
 {
-  "version": "1.28.0",
+  "version": "1.29.0",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "78bb2d49ba4e328f1b8e649575ccc5ef3e1943319d11ddba26043b6c4a2c9e6f",
-  "notes": "• Все звуки интерфейса заменены на электронные в игровом стиле: клик, наведение, запуск и обновление."
+  "sha256": "80ae656f36f98b22a8e060424fe4ee527e12fde354c9b2bd80810c751cca9552",
+  "notes": "• 3D-звук по сети • убраны звуки интерфейса • бегущая строка в мини-панели • реальная погода по ICAO"
 }
