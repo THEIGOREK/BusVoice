@@ -1,0 +1,37 @@
+name: VirusTotal
+
+# При каждом обновлении (новый update.zip или установщик) файлы отправляются на VirusTotal,
+# а результат записывается на страницу docs/VIRUSTOTAL.md.
+on:
+  push:
+    branches: [main]
+    paths: [update.zip, update.json, BusVoice_Installer.exe]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: virustotal
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Scan with VirusTotal
+        env:
+          VT_API_KEY: ${{ secrets.VT_API_KEY }}
+        run: python .github/scripts/vt_scan.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/VIRUSTOTAL.md docs/virustotal/history.json
+          git diff --cached --quiet || git commit -m "VirusTotal: отчёт проверки [skip ci]"
+          git pull --rebase origin main
+          git push

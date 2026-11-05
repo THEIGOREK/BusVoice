@@ -1,0 +1,22 @@
+[
+ {
+  "version": "1.29.1",
+  "file": "update.zip",
+  "sha256": "0f66f893ad20460269c9d9ccf6325f97b889a74fa6086bdbe937ddf73847efda",
+  "malicious": 0,
+  "suspicious": 0,
+  "total": 0,
+  "date": "ожидает первой проверки",
+  "done": false
+ },
+ {
+  "version": "1.29.1",
+  "file": "BusVoice_Installer.exe",
+  "sha256": "05c318995187b128d18d77ea7e78a9dc1263506f1432ad3b2313fedcd5cf1d76",
+  "malicious": 0,
+  "suspicious": 0,
+  "total": 0,
+  "date": "ожидает первой проверки",
+  "done": false
+ }
+]
