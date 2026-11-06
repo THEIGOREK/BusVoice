@@ -1,6 +1,6 @@
 {
-  "version": "1.31.1",
+  "version": "1.31.2",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "3493dc8f89ffb4e336c5c15923039f28930bfa1c50a2cf7ba396c5b315de873a",
-  "notes": "• исправлена ошибка запуска • темы читаемы • возвращён прежний автоинформатор"
+  "sha256": "317233e3568c266de73edf01fb066bc0b9310209ef00b68a989b62dfa0173049",
+  "notes": "• исправлена ошибка запуска «KeyError: 'nova'»"
 }
