@@ -1,6 +1,6 @@
 {
-  "version": "1.30.2",
+  "version": "1.31.0",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "a7b6f009cb6ada51aef7ad257467a08e926fbf9de2c9e09d550537d8d5b98d17",
-  "notes": "• вкладка «Авто» прокручивается • исправлена ошибка хоткея «ё»"
+  "sha256": "e8622860ab9e44774148d63644bab7e88415240f764b9cbcfbd243c88a125094",
+  "notes": "• убрана «Тема оформления» • тумблер светлая/тёмная тема над Telegram • новая тёмная тема (#161c26), активный пункт жёлтый"
 }
