@@ -1,6 +1,6 @@
 {
- "version": "1.31.3",
+ "version": "1.31.4",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "702ceae6e2c07e7405bae1891b005481edf185f3a538cc57acbad148076522ce",
- "notes": "Бегущая строка медленнее; окно «Обновление» в цветах программы; самовосстановление при сбое запуска."
+ "sha256": "8d5db4277cb57b027eaead894ae835c85ddb4fc8ccb17b77e2d1e007c61de2de",
+ "notes": "Возвращены прежние темы и «Своя тема»; карточка темы свёрнута и не мешает в настройках."
 }
