@@ -31,7 +31,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/VIRUSTOTAL.md docs/virustotal/history.json
+          git add README.md docs/VIRUSTOTAL.md docs/virustotal/history.json
           git diff --cached --quiet || git commit -m "VirusTotal: отчёт проверки [skip ci]"
           git pull --rebase origin main
           git push

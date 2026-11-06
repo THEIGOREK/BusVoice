@@ -7,6 +7,7 @@ API = "https://www.virustotal.com/api/v3"
 FILES = ["update.zip", "BusVoice_Installer.exe"]
 HIST = "docs/virustotal/history.json"
 PAGE = "docs/VIRUSTOTAL.md"
+README = "README.md"
 
 
 def sha256(p):
@@ -91,6 +92,14 @@ def render(hist):
             "> Единичные срабатывания малоизвестных антивирусов на упакованные программы (в том числе на Python-приложения) бывают ложными. "
             "Если вы видите срабатывание — напишите в Issues, разберёмся.", ""]
     open(PAGE, "w", encoding="utf-8").write("\n".join(out))
+    # та же таблица — прямо на главной странице (между маркерами в README.md)
+    table = "\n".join(out[out.index("| Версия | Файл | Результат | Проверено | SHA-256 |"):out.index("## Как проверить самому") - 1])
+    if os.path.exists(README):
+        t = open(README, encoding="utf-8").read()
+        a, b = "<!-- VT:START -->", "<!-- VT:END -->"
+        if a in t and b in t:
+            t = t[:t.index(a) + len(a)] + "\n" + table + "\n" + t[t.index(b):]
+            open(README, "w", encoding="utf-8").write(t)
 
 
 if __name__ == "__main__":
