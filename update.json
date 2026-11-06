@@ -1,6 +1,6 @@
 {
-  "version": "1.30.1",
+  "version": "1.30.2",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "480653c32c8bc499726fbf88b68f8ee1dc2fbd3fcec251daaab0d10e8ece7e31",
-  "notes": "• AutoInformant Pro 2.0.2 работает внутри вкладки «Авто» (автор Telegram @leva_zayakin)"
+  "sha256": "a7b6f009cb6ada51aef7ad257467a08e926fbf9de2c9e09d550537d8d5b98d17",
+  "notes": "• вкладка «Авто» прокручивается • исправлена ошибка хоткея «ё»"
 }
