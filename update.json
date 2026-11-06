@@ -1,6 +1,6 @@
 {
-  "version": "1.29.1",
+  "version": "1.30.0",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "0f66f893ad20460269c9d9ccf6325f97b889a74fa6086bdbe937ddf73847efda",
-  "notes": "• погода: карточка в конце настроек, полный список ICAO сразу и с обновлением из интернета • погода применяется в игре сразу, статус «принята/нет»"
+  "sha256": "12138d35082b0a6872b5226bdae03ecff1ba6c88afd8ccceb56f18e829a42fb9",
+  "notes": "• новый «Авто информатор» — AutoInformant Pro 2.0.2 (автор Telegram @leva_zayakin) • исправлено «ждём openOMSI» • 3D-звук по сети: слышно только в автобусе"
 }
