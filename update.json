@@ -1,6 +1,6 @@
 {
-  "version": "1.30.0",
+  "version": "1.30.1",
   "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "12138d35082b0a6872b5226bdae03ecff1ba6c88afd8ccceb56f18e829a42fb9",
-  "notes": "• новый «Авто информатор» — AutoInformant Pro 2.0.2 (автор Telegram @leva_zayakin) • исправлено «ждём openOMSI» • 3D-звук по сети: слышно только в автобусе"
+  "sha256": "480653c32c8bc499726fbf88b68f8ee1dc2fbd3fcec251daaab0d10e8ece7e31",
+  "notes": "• AutoInformant Pro 2.0.2 работает внутри вкладки «Авто» (автор Telegram @leva_zayakin)"
 }
