@@ -1,6 +1,6 @@
 {
- "version": "1.31.4",
+ "version": "1.32.0",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "8d5db4277cb57b027eaead894ae835c85ddb4fc8ccb17b77e2d1e007c61de2de",
- "notes": "Возвращены прежние темы и «Своя тема»; карточка темы свёрнута и не мешает в настройках."
+ "sha256": "ff1a62e786d94ad0b0ffbdf57e383759733f32e16f33246890f619bba66685cf",
+ "notes": "Случайный анонс сам раз в 10 минут; оповещение об успешной активации автоинформатора; понятные причины ошибок."
 }
