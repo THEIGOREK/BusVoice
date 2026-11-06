@@ -14,7 +14,7 @@ body:
     id: game
     attributes:
       label: Игра
-      options: [OMSI 2, openOMSI]
+      options: [openOMSI]
     validations:
       required: true
   - type: textarea

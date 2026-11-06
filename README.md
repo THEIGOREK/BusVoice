@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="docs/img/banner.png" alt="BusVoice — автоинформатор остановок для OMSI 2 и openOMSI" width="100%">
+<img src="docs/img/banner.png" alt="BusVoice — автоинформатор остановок для openOMSI" width="100%">
 
 # 🚌 BusVoice
 
-**Современный автоинформатор остановок для OMSI 2 и openOMSI**
+**Современный автоинформатор остановок для openOMSI**
 голос · музыка · радио · авто-режим · 5 языков
 
 [![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)
@@ -51,7 +51,7 @@
 | 🤖 **Авто-режим для openOMSI** | Плагин встроен и ставится сам. Программа видит рейс, расстояние и скорость и объявляет остановки без клавиш. Звук — из салона и снаружи автобуса. |
 | 🎵 **Музыка и радио** | Свои файлы, радио, ссылки (YouTube и другие сайты), VK, Яндекс Музыка. Во время объявления музыка становится тише. |
 | 🪟 **Мини-панель поверх игры** | Бегущая строка, два ползунка громкости (информатор и музыка), прозрачность и масштаб. |
-| ⌨️ **Горячие клавиши** | Работают поверх OMSI, настраиваются в программе. |
+| ⌨️ **Горячие клавиши** | Работают поверх openOMSI, настраиваются в программе. |
 | 🎨 **Темы** | Светлая, тёмная (графит), «Закат», бирюзовая и **своя тема** — три цвета на выбор. |
 | 🌍 **5 языков интерфейса** | Русский, English, Українська, Беларуская, Қазақша — с флагами. |
 | 🔄 **Автообновление** | Программа сама проверяет новую версию и показывает окно «Что нового». Заходить на GitHub не нужно. |
@@ -158,7 +158,7 @@
 <details>
 <summary><b>Как работает авто-режим?</b></summary>
 
-Плагин для openOMSI устанавливается вместе с программой. Выберите рейс с расписанием в игре — BusVoice сам определит прибытие и отъезд. Для обычного OMSI 2 остаются горячие клавиши.
+Плагин для openOMSI устанавливается вместе с программой. Выберите рейс с расписанием в игре — BusVoice сам определит прибытие и отъезд. Горячие клавиши работают и без плагина.
 </details>
 
 <details>
@@ -176,7 +176,7 @@
 ## 💻 Требования
 
 - Windows 10 / 11, 64-разрядная
-- OMSI 2 или openOMSI
+- openOMSI
 - Интернет при установке (скачиваются библиотеки), для голосов, радио и обновлений
 
 ## 🐞 Нашли ошибку или есть идея?
@@ -197,7 +197,7 @@
 <details>
 <summary><b>🇬🇧 English</b></summary>
 
-**BusVoice** is a modern stop announcer for **OMSI 2** and **openOMSI**: signal → "Next stop" → stop name, with neural voices (BEL · UK · KAZ · ENG · RUS) when no audio file exists, music & radio, an in-game mini panel, hotkeys, themes, 5 interface languages and an **automatic mode for openOMSI** (no key presses needed).
+**BusVoice** is a modern stop announcer for **openOMSI**: signal → "Next stop" → stop name, with neural voices (BEL · UK · KAZ · ENG · RUS) when no audio file exists, music & radio, an in-game mini panel, hotkeys, themes, 5 interface languages and an **automatic mode for openOMSI** (no key presses needed).
 
 **Install:** download [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe), choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
 

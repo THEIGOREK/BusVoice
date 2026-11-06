@@ -1,6 +1,6 @@
 {
- "version": "1.33.0",
+ "version": "1.33.1",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "4290508bd52eaeed1cacec906d9de842988eaf03c55f3d16613900f4dd7896c3",
- "notes": "«Обзор» открывает папку случайных анонсов; интервал выбирает игрок; случайный анонс слышен только в автобусе; оповещение на языке программы."
+ "sha256": "ca89974e9c8ba8780479f37bc196d23ffbb5542ae855d244405764ece090fe99",
+ "notes": "Исправлено наложение внизу; везде вместо OMSI 2 — openOMSI."
 }
