@@ -1,6 +1,6 @@
 {
-  "version": "1.31.2",
-  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
-  "sha256": "317233e3568c266de73edf01fb066bc0b9310209ef00b68a989b62dfa0173049",
-  "notes": "• исправлена ошибка запуска «KeyError: 'nova'»"
+ "version": "1.31.3",
+ "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
+ "sha256": "702ceae6e2c07e7405bae1891b005481edf185f3a538cc57acbad148076522ce",
+ "notes": "Бегущая строка медленнее; окно «Обновление» в цветах программы; самовосстановление при сбое запуска."
 }
