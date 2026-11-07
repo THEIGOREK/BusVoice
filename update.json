@@ -1,6 +1,6 @@
 {
- "version": "1.33.4",
+ "version": "1.33.5",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "18d56e7534940babe4dc3280c0329233fce12d1dfe6cca9a0afb836ca33ff5bc",
- "notes": "В окнах программы текст копируется, ссылки кликабельны."
+ "sha256": "8503a10d674a267c25172f052586d4bd3749c39b11648bdc921a0ced85443026",
+ "notes": "Реальная погода: автозапись в openOMSI, ✅ и голос «Погода успешно активирована»."
 }
