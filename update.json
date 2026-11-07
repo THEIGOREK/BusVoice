@@ -1,6 +1,6 @@
 {
- "version": "1.33.9",
+ "version": "1.33.10",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "7cea4ff7bc345db6f11d7a0e456dac86eb966a3664d2ca280e9a4bc6ab724116",
- "notes": "Раздел «Авто»: кнопка «Обзор» рядом со «Стоп» — выбор аудиофайла для остановки."
+ "sha256": "0200f1f042f7ed95017b122ba887c0de22b27b6bee8a371602899c866af38b87",
+ "notes": "Звук на звук не накладывается: остановки, анонсы и служебные звуки идут по очереди."
 }
