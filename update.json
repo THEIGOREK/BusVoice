@@ -1,6 +1,6 @@
 {
- "version": "1.33.5",
+ "version": "1.33.6",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "8503a10d674a267c25172f052586d4bd3749c39b11648bdc921a0ced85443026",
- "notes": "Реальная погода: автозапись в openOMSI, ✅ и голос «Погода успешно активирована»."
+ "sha256": "2ed527fd72d99b5e433f0785c28c982094b229403af8e0009b8e122ee7347abf",
+ "notes": "Реальная погода: включённая в игре синхронизация METAR больше не считается ошибкой."
 }
