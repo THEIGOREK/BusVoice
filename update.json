@@ -1,6 +1,6 @@
 {
- "version": "1.33.6",
+ "version": "1.33.7",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "2ed527fd72d99b5e433f0785c28c982094b229403af8e0009b8e122ee7347abf",
- "notes": "Реальная погода: включённая в игре синхронизация METAR больше не считается ошибкой."
+ "sha256": "ec12ff1b1e6becdab65cef1b0a698166b5959581fd6b4ed1c5cd70abeee29c84",
+ "notes": "Реальная погода: смена станции METAR в запущенной игре через плагин."
 }
