@@ -59,11 +59,12 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)** и запустите.
-2. Он найдёт Python (или поставит через winget), скачает официальный `update.zip` с этого репозитория, проверит SHA-256 и откроет окно установки.
-3. Выберите язык и папку, нажмите **«Установить»**. Нужен интернет, права администратора не нужны.
+1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)**.
+2. Запустите. Выберите язык, нажмите **«Следующая»**, укажите папку и нажмите **«Установить»**.
+3. Установщик сам поставит Python и нужные библиотеки (нужен интернет, права администратора не нужны).
+4. В конце оставьте галочки **«Запустить приложение»** и **«Установить ярлык на рабочий стол»**.
 
-Установщик — новая, ничем не упакованная программа (без вшитых файлов, 64-bit Windows 10/11), но у неё нет цифровой подписи, поэтому Microsoft Defender или браузер **могут** показать предупреждение (ложное срабатывание). Тогда используйте вариант без .exe: **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** — распакуйте и запустите `Установить_BusVoice.bat`.
+Если Microsoft Defender или браузер блокирует этот установщик (он упакован и не подписан — ложное срабатывание), используйте запасные варианты: **[BusVoice_Installer_Lite.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer_Lite.exe)** (лёгкий, ничем не упакован) или **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** (без .exe, запустить `Установить_BusVoice.bat`).
 
 <div align="center">
 <img src="docs/img/installer.png" alt="Установщик BusVoice" height="320">

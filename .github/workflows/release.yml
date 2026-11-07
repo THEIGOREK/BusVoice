@@ -5,7 +5,7 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [update.json, BusVoice_Setup.zip, BusVoice_Installer.exe]
+    paths: [update.json, BusVoice_Setup.zip, BusVoice_Installer.exe, BusVoice_Installer_Lite.exe]
   workflow_dispatch:
 
 permissions:
@@ -28,4 +28,4 @@ jobs:
           else
             gh release create "$TAG" --title "$VER" --notes "$NOTES" --target main --latest
           fi
-          gh release upload "$TAG" BusVoice_Setup.zip BusVoice_Installer.exe --clobber
+          gh release upload "$TAG" BusVoice_Setup.zip BusVoice_Installer.exe BusVoice_Installer_Lite.exe --clobber
