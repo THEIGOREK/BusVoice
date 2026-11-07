@@ -1,6 +1,6 @@
 {
- "version": "1.33.8",
+ "version": "1.33.9",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "26162ec46d79e3b3a6cfb276311fbcda576275e1c8bc427485ba4c8f025de7e6",
- "notes": "Исправлен номер версии после обновления; реальная погода: ✅, голос, смена станции."
+ "sha256": "7cea4ff7bc345db6f11d7a0e456dac86eb966a3664d2ca280e9a4bc6ab724116",
+ "notes": "Раздел «Авто»: кнопка «Обзор» рядом со «Стоп» — выбор аудиофайла для остановки."
 }
