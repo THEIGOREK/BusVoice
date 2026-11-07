@@ -232,11 +232,11 @@
  {
   "version": "1.33.10",
   "file": "BusVoice_Installer.exe",
-  "sha256": "599ac51d6bbfad50c5d1d7854b431316c7a9f8809b914c27d3ef96a9a8bcf16c",
-  "malicious": 2,
+  "sha256": "998e138e683a733a24d3034311c6ef83773a336bb3c52ec280e9512d128f5960",
+  "malicious": 3,
   "suspicious": 0,
   "total": 71,
-  "date": "2026-11-07 18:15 UTC",
+  "date": "2026-11-07 18:33 UTC",
   "done": true
  }
 ]
