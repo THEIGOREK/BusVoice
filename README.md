@@ -7,7 +7,7 @@
 **Современный автоинформатор остановок для openOMSI**
 голос · музыка · радио · авто-режим · 5 языков
 
-[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)
+[![Скачать установщик (zip, без .exe)](https://img.shields.io/badge/⬇_Скачать_установщик_(zip)-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)
 
 [![Версия](https://img.shields.io/github/v/release/THEIGOREK/BusVoice?style=flat-square&color=17A398&label=версия)](https://github.com/THEIGOREK/BusVoice/releases/latest)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)
@@ -59,10 +59,11 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)**.
-2. Запустите. Выберите язык, нажмите **«Следующая»**, укажите папку и нажмите **«Установить»**.
-3. Установщик сам поставит Python и нужные библиотеки (нужен интернет, права администратора не нужны).
-4. В конце оставьте галочки **«Запустить приложение»** и **«Установить ярлык на рабочий стол»**.
+1. Скачайте **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** — это обычный архив без упакованных .exe, браузеры и антивирусы его не блокируют.
+2. Распакуйте архив целиком и запустите **«Установить_BusVoice.bat»** (обычный текстовый скрипт, его можно прочитать в Блокноте).
+3. Скрипт сам найдёт Python (или поставит через winget), скопирует программу в `%LOCALAPPDATA%\BusVoice`, поставит библиотеки (нужен интернет, права администратора не нужны) и создаст ярлык на рабочем столе.
+
+Старый вариант — графический установщик [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe): он упакован и не подписан, поэтому некоторые браузеры и антивирусы могут его блокировать (ложное срабатывание, см. «Частые вопросы»).
 
 <div align="center">
 <img src="docs/img/installer.png" alt="Установщик BusVoice" height="320">
