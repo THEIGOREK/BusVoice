@@ -128,5 +128,25 @@
   "total": 60,
   "date": "2026-11-06 19:41 UTC",
   "done": true
+ },
+ {
+  "version": "1.33.2",
+  "file": "update.zip",
+  "sha256": "3cb4c41560d18befdd594d4a35752ca6d1783350e369b87b353e21f69570b351",
+  "malicious": 0,
+  "suspicious": 0,
+  "total": 65,
+  "date": "2026-11-07 03:46 UTC",
+  "done": true
+ },
+ {
+  "version": "1.33.2",
+  "file": "BusVoice_Installer.exe",
+  "sha256": "943fddf6dd35d2b4dee07e464e919c65a22f25654d8749161b675b6173539303",
+  "malicious": 5,
+  "suspicious": 0,
+  "total": 67,
+  "date": "2026-11-07 03:46 UTC",
+  "done": true
  }
 ]
