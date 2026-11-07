@@ -5,7 +5,7 @@ name: VirusTotal
 on:
   push:
     branches: [main]
-    paths: [update.zip, update.json, BusVoice_Installer.exe]
+    paths: [update.zip, update.json, BusVoice_Setup.zip]
   workflow_dispatch:
 
 permissions:
