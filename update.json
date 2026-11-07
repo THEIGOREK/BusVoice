@@ -1,6 +1,6 @@
 {
- "version": "1.33.2",
+ "version": "1.33.3",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "3cb4c41560d18befdd594d4a35752ca6d1783350e369b87b353e21f69570b351",
- "notes": "Новые картинки гайда; установщик для openOMSI."
+ "sha256": "c8e289a77b37422833c10f02b6c2f293114f475d071d93c7336421e7ad6dd136",
+ "notes": "Исправлена ложная ошибка «Плагин AutoInformantPro не установлен»."
 }
