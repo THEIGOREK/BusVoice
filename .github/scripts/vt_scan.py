@@ -4,7 +4,7 @@ import hashlib, json, os, sys, time, uuid, datetime, urllib.request, urllib.erro
 
 KEY = os.environ.get("VT_API_KEY", "").strip()
 API = "https://www.virustotal.com/api/v3"
-FILES = ["update.zip", "BusVoice_Setup.zip", "BusVoice_Installer.exe"]
+FILES = ["update.zip", "BusVoice_Installer.exe"]
 HIST = "docs/virustotal/history.json"
 PAGE = "docs/VIRUSTOTAL.md"
 README = "README.md"
@@ -86,7 +86,7 @@ def render(hist):
         res = "✅ чисто" if e["malicious"] == 0 and e["suspicious"] == 0 else f"⚠️ {e['malicious']} + {e['suspicious']}"
         out.append(f"| [**{e['version']}**]({link}) | `{e['file']}` | {res} ({e['malicious']}/{e['total']}) | {e['date']} | `{e['sha256'][:16]}…` |")
     out += ["", "## Как проверить самому", "",
-            "1. Скачайте файл и посчитайте хеш: `certutil -hashfile BusVoice_Setup.zip SHA256` (Windows PowerShell: `Get-FileHash`).",
+            "1. Скачайте файл и посчитайте хеш: `certutil -hashfile BusVoice_Installer.exe SHA256` (Windows PowerShell: `Get-FileHash`).",
             "2. Откройте ссылку нужной версии в таблице — хеш на странице VirusTotal должен совпасть.",
             "3. Исходный код проверки — [`.github/scripts/vt_scan.py`](../.github/scripts/vt_scan.py), запуск — [`virustotal.yml`](../.github/workflows/virustotal.yml).", "",
             "> Единичные срабатывания малоизвестных антивирусов на упакованные программы (в том числе на Python-приложения) бывают ложными. "

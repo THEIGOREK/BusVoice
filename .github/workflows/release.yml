@@ -5,7 +5,7 @@ name: Release
 on:
   push:
     branches: [main]
-    paths: [update.json, BusVoice_Setup.zip, BusVoice_Installer.exe, BusVoice_Installer_Lite.exe]
+    paths: [update.json, BusVoice_Installer.exe]
   workflow_dispatch:
 
 permissions:
@@ -28,4 +28,8 @@ jobs:
           else
             gh release create "$TAG" --title "$VER" --notes "$NOTES" --target main --latest
           fi
-          gh release upload "$TAG" BusVoice_Setup.zip BusVoice_Installer.exe BusVoice_Installer_Lite.exe --clobber
+          gh release upload "$TAG" BusVoice_Installer.exe --clobber
+          # в релизе остаётся только установщик: лишние старые файлы удаляем
+          for A in $(gh release view "$TAG" --json assets --jq '.assets[].name'); do
+            if [ "$A" != "BusVoice_Installer.exe" ]; then gh release delete-asset "$TAG" "$A" -y; fi
+          done

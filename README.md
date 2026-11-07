@@ -59,12 +59,14 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)**.
-2. Запустите. Выберите язык, нажмите **«Следующая»**, укажите папку и нажмите **«Установить»**.
-3. Установщик сам поставит Python и нужные библиотеки (нужен интернет, права администратора не нужны).
-4. В конце оставьте галочки **«Запустить приложение»** и **«Установить ярлык на рабочий стол»**.
+1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)** и запустите (Windows 10/11, 64 бит).
+2. Выберите язык (русский, English, Беларуская, Українська, Қазақша), прочитайте приветствие и укажите папку установки.
+3. Установщик **сам скачает Python 3.12.0** (только для BusVoice, внутрь вашей папки), программу и библиотеки. Нужен интернет, права администратора не нужны.
+4. В конце оставьте галочки **«Запустить BusVoice»** и **«Установить ярлык на рабочем столе»**. Ярлык также создаётся в папке программы и в меню «Пуск».
 
-Если Microsoft Defender или браузер блокирует этот установщик (он упакован и не подписан — ложное срабатывание), используйте запасные варианты: **[BusVoice_Installer_Lite.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer_Lite.exe)** (лёгкий, ничем не упакован) или **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** (без .exe, запустить `Установить_BusVoice.bat`).
+**Удаление:** «Параметры → Приложения → BusVoice → Удалить» или ярлык «Удалить BusVoice» (меню «Пуск» / папка программы). Спросит подтверждение и удалит всё без следов: программу, свой Python 3.12.0, ярлыки, записи в реестре и папку (данные — по галочке).
+
+> Установщик не подписан цифровой подписью, поэтому Microsoft Defender или браузер могут показать предупреждение — это ложное срабатывание. Он ничем не упакован, открыто делает только описанное выше, а загруженные файлы проверяет по SHA-256 (Python — по зашитому хешу, BusVoice — по `update.json`).
 
 <div align="center">
 <img src="docs/img/installer.png" alt="Установщик BusVoice" height="320">
@@ -108,7 +110,7 @@
 | [**1.29.1**](https://www.virustotal.com/gui/file/05c318995187b128d18d77ea7e78a9dc1263506f1432ad3b2313fedcd5cf1d76) | `BusVoice_Installer.exe` | ⚠️ 5 + 0 (5/71) | 2026-11-05 09:45 UTC | `05c318995187b128…` |
 <!-- VT:END -->
 
-**Как проверить самому:** скачайте файл и посчитайте хеш (`certutil -hashfile BusVoice_Setup.zip SHA256` или PowerShell `Get-FileHash`), затем откройте ссылку нужной версии — хеш на странице VirusTotal должен совпасть. Подробнее: [docs/VIRUSTOTAL.md](docs/VIRUSTOTAL.md).
+**Как проверить самому:** скачайте файл и посчитайте хеш (`certutil -hashfile BusVoice_Installer.exe SHA256` или PowerShell `Get-FileHash`), затем откройте ссылку нужной версии — хеш на странице VirusTotal должен совпасть. Подробнее: [docs/VIRUSTOTAL.md](docs/VIRUSTOTAL.md).
 
 > Единичные срабатывания малоизвестных антивирусов на упакованные программы (в том числе на Python-приложения) бывают ложными.
 
@@ -227,7 +229,7 @@
 
 **BusVoice** is a modern stop announcer for **openOMSI**: signal → "Next stop" → stop name, with neural voices (BEL · UK · KAZ · ENG · RUS) when no audio file exists, music & radio, an in-game mini panel, hotkeys, themes, 5 interface languages and an **automatic mode for openOMSI** (no key presses needed).
 
-**Install:** download [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe) (or BusVoice_Setup.zip if your antivirus blocks it), choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
+**Install:** download [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe), choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
 
 Source code is not published; this repository hosts the installer and the update packages.
 </details>
