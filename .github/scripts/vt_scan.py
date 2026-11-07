@@ -4,7 +4,7 @@ import hashlib, json, os, sys, time, uuid, datetime, urllib.request, urllib.erro
 
 KEY = os.environ.get("VT_API_KEY", "").strip()
 API = "https://www.virustotal.com/api/v3"
-FILES = ["update.zip", "BusVoice_Setup.zip"]
+FILES = ["update.zip", "BusVoice_Setup.zip", "BusVoice_Installer.exe"]
 HIST = "docs/virustotal/history.json"
 PAGE = "docs/VIRUSTOTAL.md"
 README = "README.md"

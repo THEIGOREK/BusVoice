@@ -7,7 +7,7 @@
 **Современный автоинформатор остановок для openOMSI**
 голос · музыка · радио · авто-режим · 5 языков
 
-[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик_(zip)-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)
+[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)
 
 [![Версия](https://img.shields.io/github/v/release/THEIGOREK/BusVoice?style=flat-square&color=17A398&label=версия)](https://github.com/THEIGOREK/BusVoice/releases/latest)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)
@@ -59,12 +59,11 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** и распакуйте архив целиком.
-2. Запустите **«Установить_BusVoice.bat»** (обычный текстовый скрипт). Он найдёт Python (или поставит через winget) и откроет окно установщика.
+1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)** и запустите.
+2. Он найдёт Python (или поставит через winget), скачает официальный `update.zip` с этого репозитория, проверит SHA-256 и откроет окно установки.
 3. Выберите язык и папку, нажмите **«Установить»**. Нужен интернет, права администратора не нужны.
-4. Оставьте галочки **«Запустить»** и **«Ярлык на рабочем столе»**.
 
-В архиве нет упакованных .exe — только программа и текстовые скрипты, поэтому Windows и браузеры её не блокируют. Старый установщик `.exe` больше не распространяется: Microsoft Defender стал считать его угрозой (ложное срабатывание эвристики).
+Установщик — новая, ничем не упакованная программа (без вшитых файлов, 64-bit Windows 10/11), но у неё нет цифровой подписи, поэтому Microsoft Defender или браузер **могут** показать предупреждение (ложное срабатывание). Тогда используйте вариант без .exe: **[BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip)** — распакуйте и запустите `Установить_BusVoice.bat`.
 
 <div align="center">
 <img src="docs/img/installer.png" alt="Установщик BusVoice" height="320">
@@ -227,7 +226,7 @@
 
 **BusVoice** is a modern stop announcer for **openOMSI**: signal → "Next stop" → stop name, with neural voices (BEL · UK · KAZ · ENG · RUS) when no audio file exists, music & radio, an in-game mini panel, hotkeys, themes, 5 interface languages and an **automatic mode for openOMSI** (no key presses needed).
 
-**Install:** download [BusVoice_Setup.zip](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Setup.zip), unzip it, run `Установить_BusVoice.bat`, choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
+**Install:** download [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe) (or BusVoice_Setup.zip if your antivirus blocks it), choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
 
 Source code is not published; this repository hosts the installer and the update packages.
 </details>
