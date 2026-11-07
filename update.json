@@ -1,6 +1,6 @@
 {
- "version": "1.33.7",
+ "version": "1.33.8",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "ec12ff1b1e6becdab65cef1b0a698166b5959581fd6b4ed1c5cd70abeee29c84",
- "notes": "Реальная погода: смена станции METAR в запущенной игре через плагин."
+ "sha256": "26162ec46d79e3b3a6cfb276311fbcda576275e1c8bc427485ba4c8f025de7e6",
+ "notes": "Исправлен номер версии после обновления; реальная погода: ✅, голос, смена станции."
 }
