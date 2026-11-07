@@ -1,6 +1,6 @@
 {
- "version": "1.33.1",
+ "version": "1.33.2",
  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "ca89974e9c8ba8780479f37bc196d23ffbb5542ae855d244405764ece090fe99",
- "notes": "Исправлено наложение внизу; везде вместо OMSI 2 — openOMSI."
+ "sha256": "3cb4c41560d18befdd594d4a35752ca6d1783350e369b87b353e21f69570b351",
+ "notes": "Новые картинки гайда; установщик для openOMSI."
 }
