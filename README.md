@@ -85,6 +85,7 @@
 <!-- VT:START -->
 | Версия | Файл | Результат | Проверено | SHA-256 |
 |---|---|---|---|---|
+| [**1.36.1**](https://www.virustotal.com/gui/file/c1310c395ef68d06b6a56a48a69554bc29d14c630f39f7ba02d3adf4b82e0c4f) | `update.zip` | ✅ чисто (0/65) | 2026-11-08 19:24 UTC | `c1310c395ef68d06…` |
 | [**1.36.0**](https://www.virustotal.com/gui/file/b9f1eaafd0c633713ce65995d845e15895bfbd0d767ce4967680a913feb09ddd) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 14:42 UTC | `b9f1eaafd0c63371…` |
 | [**1.36.0**](https://www.virustotal.com/gui/file/d33cc748a62b7df509ddc0bf47969afe572c49df8df90b6341a7021e8ee4e163) | `BusVoice_Installer.exe` | ⚠️ 3 + 0 (3/71) | 2026-11-08 14:42 UTC | `d33cc748a62b7df5…` |
 | [**1.35.0**](https://www.virustotal.com/gui/file/aa15a99235593e9d6eea3de284735ae517da4e399452b3e56f1975f7191c7b5d) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 14:30 UTC | `aa15a99235593e9d…` |

@@ -328,5 +328,15 @@
   "total": 71,
   "date": "2026-11-08 14:42 UTC",
   "done": true
+ },
+ {
+  "version": "1.36.1",
+  "file": "update.zip",
+  "sha256": "c1310c395ef68d06b6a56a48a69554bc29d14c630f39f7ba02d3adf4b82e0c4f",
+  "malicious": 0,
+  "suspicious": 0,
+  "total": 65,
+  "date": "2026-11-08 19:24 UTC",
+  "done": true
  }
 ]
