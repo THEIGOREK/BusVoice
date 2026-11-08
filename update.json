@@ -1,6 +1,6 @@
 {
- "version": "1.33.10",
- "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
- "sha256": "0200f1f042f7ed95017b122ba887c0de22b27b6bee8a371602899c866af38b87",
- "notes": "Звук на звук не накладывается: остановки, анонсы и служебные звуки идут по очереди."
+  "version": "1.33.11",
+  "url": "https://raw.githubusercontent.com/THEIGOREK/BusVoice/main/update.zip",
+  "sha256": "bf90990c73d869a485b2a139715747ec0f8af38110b72796734f349d329f59e1",
+  "notes": "• Автоинформатор: если openOMSI запущен, но плагин AutoInformantPro не отвечает, BusVoice сам находит папку запущенной игры, ставит туда плагины и переключается на неё. После этого достаточно один раз полностью перезапустить игру."
 }
