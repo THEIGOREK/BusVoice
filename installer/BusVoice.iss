@@ -46,6 +46,7 @@ VersionInfoProductName=BusVoice
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
+#if FileExists("Belarusian.isl")
 Name: "belarusian"; MessagesFile: "Belarusian.isl"
 #endif
 
