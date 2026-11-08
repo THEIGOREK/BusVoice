@@ -46,54 +46,58 @@ VersionInfoProductName=BusVoice
 Name: "russian"; MessagesFile: "compiler:Languages\Russian.isl"
 Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
-#if FileExists("Belarusian.isl")
 Name: "belarusian"; MessagesFile: "Belarusian.isl"
-#endif
-#if FileExists("Kazakh.isl")
-Name: "kazakh"; MessagesFile: "Kazakh.isl"
 #endif
 
 [CustomMessages]
 russian.TaskDefender=Добавить папку BusVoice в исключения Защитника Windows (Windows попросит подтверждение)
 english.TaskDefender=Add the BusVoice folder to Windows Defender exclusions (Windows will ask for confirmation)
 ukrainian.TaskDefender=Додати теку BusVoice до винятків Захисника Windows (Windows попросить підтвердження)
+#if FileExists("Belarusian.isl")
 belarusian.TaskDefender=Дадаць папку BusVoice у выключэнні Абаронцы Windows (Windows папросіць пацвярджэнне)
-kazakh.TaskDefender=BusVoice қалтасын Windows қорғаушысының ерекшеліктеріне қосу (Windows растауды сұрайды)
+#endif
 russian.DlPython=Скачивается Python {#PyVer} (нужен только для BusVoice)...
 english.DlPython=Downloading Python {#PyVer} (used only by BusVoice)...
 ukrainian.DlPython=Завантажується Python {#PyVer} (потрібен лише для BusVoice)...
+#if FileExists("Belarusian.isl")
 belarusian.DlPython=Спампоўваецца Python {#PyVer} (патрэбен толькі для BusVoice)...
-kazakh.DlPython=Python {#PyVer} жүктелуде (тек BusVoice үшін)...
+#endif
 russian.InstPython=Устанавливается Python {#PyVer} внутрь папки BusVoice...
 english.InstPython=Installing Python {#PyVer} inside the BusVoice folder...
 ukrainian.InstPython=Встановлюється Python {#PyVer} усередину теки BusVoice...
+#if FileExists("Belarusian.isl")
 belarusian.InstPython=Усталёўваецца Python {#PyVer} у папку BusVoice...
-kazakh.InstPython=Python {#PyVer} BusVoice қалтасының ішіне орнатылуда...
+#endif
 russian.InstLibs=Устанавливаются библиотеки (это может занять несколько минут)...
 english.InstLibs=Installing libraries (this may take a few minutes)...
 ukrainian.InstLibs=Встановлюються бібліотеки (це може тривати кілька хвилин)...
+#if FileExists("Belarusian.isl")
 belarusian.InstLibs=Усталёўваюцца бібліятэкі (гэта можа заняць некалькі хвілін)...
-kazakh.InstLibs=Кітапханалар орнатылуда (бірнеше минут алуы мүмкін)...
+#endif
 russian.DlFail=Не удалось скачать Python. Проверьте интернет и запустите установку снова.
 english.DlFail=Could not download Python. Check your internet connection and run setup again.
 ukrainian.DlFail=Не вдалося завантажити Python. Перевірте інтернет і запустіть встановлення знову.
+#if FileExists("Belarusian.isl")
 belarusian.DlFail=Не атрымалася спампаваць Python. Праверце інтэрнэт і запусціце ўсталёўку зноў.
-kazakh.DlFail=Python жүктеу мүмкін болмады. Интернетті тексеріп, орнатуды қайта іске қосыңыз.
+#endif
 russian.PyFail=Не удалось установить Python. Подробности: %1
 english.PyFail=Could not install Python. Details: %1
 ukrainian.PyFail=Не вдалося встановити Python. Деталі: %1
+#if FileExists("Belarusian.isl")
 belarusian.PyFail=Не атрымалася ўсталяваць Python. Падрабязнасці: %1
-kazakh.PyFail=Python орнату мүмкін болмады. Мәліметтер: %1
+#endif
 russian.LibFail=Не удалось установить библиотеки. Проверьте интернет и запустите установку снова.
 english.LibFail=Could not install libraries. Check your internet connection and run setup again.
 ukrainian.LibFail=Не вдалося встановити бібліотеки. Перевірте інтернет і запустіть встановлення знову.
+#if FileExists("Belarusian.isl")
 belarusian.LibFail=Не атрымалася ўсталяваць бібліятэкі. Праверце інтэрнэт і запусціце ўсталёўку зноў.
-kazakh.LibFail=Кітапханаларды орнату мүмкін болмады. Интернетті тексеріп, орнатуды қайта іске қосыңыз.
+#endif
 russian.AskData=Удалить также ваши данные (карты, маршруты, настройки, звуки)?
 english.AskData=Also delete your data (maps, routes, settings, sounds)?
 ukrainian.AskData=Видалити також ваші дані (мапи, маршрути, налаштування, звуки)?
+#if FileExists("Belarusian.isl")
 belarusian.AskData=Выдаліць таксама вашы даныя (мапы, маршруты, налады, гукі)?
-kazakh.AskData=Деректеріңізді де (карталар, маршруттар, баптаулар, дыбыстар) жою керек пе?
+#endif
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"

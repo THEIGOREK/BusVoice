@@ -30,7 +30,6 @@ jobs:
       - name: Языки (белорусский и казахский — неофициальные)
         shell: pwsh
         run: |
-          foreach ($l in 'Belarusian','Kazakh') {
             try {
               Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/$l.isl" -OutFile "installer\$l.isl"
               Write-Host "ok $l"
