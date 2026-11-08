@@ -93,6 +93,9 @@ ukrainian.LibFail=Не вдалося встановити бібліотеки.
 #if FileExists("Belarusian.isl")
 belarusian.LibFail=Не атрымалася ўсталяваць бібліятэкі. Праверце інтэрнэт і запусціце ўсталёўку зноў.
 #endif
+russian.VenvFail=Не удалось создать окружение Python. Код: %1
+english.VenvFail=Could not create the Python environment. Code: %1
+ukrainian.VenvFail=Не вдалося створити середовище Python. Код: %1
 russian.AskData=Удалить также ваши данные (карты, маршруты, настройки, звуки)?
 english.AskData=Also delete your data (maps, routes, settings, sounds)?
 ukrainian.AskData=Видалити також ваші дані (мапи, маршрути, налаштування, звуки)?
@@ -108,12 +111,12 @@ Name: "defender"; Description: "{cm:TaskDefender}"
 Source: "..\payload\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs ignoreversion
 
 [Icons]
-Name: "{autoprograms}\BusVoice"; Filename: "{app}\python\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"
-Name: "{autodesktop}\BusVoice"; Filename: "{app}\python\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; Tasks: desktopicon
-Name: "{app}\BusVoice"; Filename: "{app}\python\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"
+Name: "{autoprograms}\BusVoice"; Filename: "{app}\venv\Scripts\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"
+Name: "{autodesktop}\BusVoice"; Filename: "{app}\venv\Scripts\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"; Tasks: desktopicon
+Name: "{app}\BusVoice"; Filename: "{app}\venv\Scripts\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; IconFilename: "{app}\icon.ico"
 
 [Run]
-Filename: "{app}\python\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; Description: "{cm:LaunchProgram,BusVoice}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\venv\Scripts\pythonw.exe"; Parameters: """{app}\busvoice.py"""; WorkingDir: "{app}"; Description: "{cm:LaunchProgram,BusVoice}"; Flags: nowait postinstall skipifsilent
 
 [UninstallRun]
 Filename: "{app}\_setup\{#PyExe}"; Parameters: "/uninstall /quiet"; RunOnceId: "RemovePython"; Flags: waituntilterminated runhidden; Check: FileExists(ExpandConstant('{app}\_setup\{#PyExe}'))
@@ -122,10 +125,37 @@ Filename: "{app}\_setup\{#PyExe}"; Parameters: "/uninstall /quiet"; RunOnceId: "
 var
   Dl: TDownloadWizardPage;
   PyTmp: String;
+  SysPy: String;
 
 procedure InitializeWizard;
 begin
   Dl := CreateDownloadPage(SetupMessage(msgWizardPreparing), ExpandConstant('{cm:DlPython}'), nil);
+end;
+
+function FindSystemPython: String;
+var
+  Vers: array[0..5] of String;
+  Roots: array[0..2] of Integer;
+  i, r: Integer;
+  Dir, Exe: String;
+begin
+  Result := '';
+  Vers[0] := '3.12'; Vers[1] := '3.13'; Vers[2] := '3.11'; Vers[3] := '3.14'; Vers[4] := '3.10'; Vers[5] := '3.15';
+  Roots[0] := HKCU; Roots[1] := HKLM64; Roots[2] := HKLM32;
+  for i := 0 to 5 do
+    for r := 0 to 2 do
+    begin
+      Dir := '';
+      if RegQueryStringValue(Roots[r], 'Software\Python\PythonCore\' + Vers[i] + '\InstallPath', '', Dir) and (Dir <> '') then
+      begin
+        Exe := AddBackslash(Dir) + 'python.exe';
+        if FileExists(Exe) then
+        begin
+          Result := Exe;
+          Exit;
+        end;
+      end;
+    end;
 end;
 
 function PyAlreadyHere: Boolean;
@@ -143,6 +173,8 @@ begin
   if CurPageID = wpReady then
   begin
     PyTmp := '';
+    SysPy := FindSystemPython;
+    if SysPy <> '' then Exit;
     if PyAlreadyHere then Exit;
     Urls[0] := '{#PyUrl}';
     Urls[1] := '{#PyUrl2}';
@@ -193,29 +225,46 @@ end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
 var
-  App, Py, Req, Setup, Extra: String;
+  App, Py, Base, Venv, VPy, Req, Setup, Extra: String;
   Code, i: Integer;
   Ok: Boolean;
 begin
   if CurStep <> ssPostInstall then Exit;
   App := ExpandConstant('{app}');
   Py := App + '\python\python.exe';
+  Venv := App + '\venv';
+  VPy := Venv + '\Scripts\python.exe';
   Setup := App + '\_setup';
   ForceDirectories(Setup);
-  if (PyTmp <> '') and not FileExists(Py) then
+  Code := 0;
+  Base := SysPy;
+  if (Base = '') and (PyTmp <> '') and not FileExists(Py) then
   begin
     WizardForm.StatusLabel.Caption := ExpandConstant('{cm:InstPython}');
-    FileCopy(PyTmp, Setup + '\{#PyExe}', False);
     Ok := False;
     for i := 1 to 3 do
     begin
       RunHidden(PyTmp, '/quiet InstallAllUsers=0 "TargetDir=' + App + '\python" PrependPath=0 Shortcuts=0 Include_launcher=0 InstallLauncherAllUsers=0 Include_test=0 Include_doc=0 Include_dev=0 AssociateFiles=0 CompileAll=0', App, Code);
       if FileExists(Py) then begin Ok := True; Break; end;
+      if Code = 1638 then Break;
       Sleep(3000 * i);
     end;
     if not Ok then
     begin
-      MsgBox(FmtMessage(ExpandConstant('{cm:PyFail}'), [IntToStr(Code)]), mbError, MB_OK);
+      Base := FindSystemPython;
+      if Base = '' then
+      begin
+        MsgBox(FmtMessage(ExpandConstant('{cm:PyFail}'), [IntToStr(Code)]), mbError, MB_OK);
+        Exit;
+      end;
+    end;
+  end;
+  if Base = '' then Base := Py;
+  if not FileExists(VPy) then
+  begin
+    if not (RunHidden(Base, '-m venv "' + Venv + '"', App, Code) and (Code = 0) and FileExists(VPy)) then
+    begin
+      MsgBox(FmtMessage(ExpandConstant('{cm:VenvFail}'), [IntToStr(Code)]), mbError, MB_OK);
       Exit;
     end;
   end;
@@ -227,7 +276,7 @@ begin
     if i = 2 then Extra := ' -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com'
     else if i = 3 then Extra := ' -i https://pypi.tuna.tsinghua.edu.cn/simple --trusted-host pypi.tuna.tsinghua.edu.cn'
     else Extra := '';
-    if RunHidden(Py, '-m pip install --no-cache-dir --disable-pip-version-check --retries 5 --timeout 30' + Extra + ' -r "' + Req + '"', App, Code) and (Code = 0) then
+    if RunHidden(VPy, '-m pip install --no-cache-dir --disable-pip-version-check --retries 5 --timeout 30' + Extra + ' -r "' + Req + '"', App, Code) and (Code = 0) then
     begin
       Ok := True;
       Break;
@@ -260,6 +309,7 @@ begin
       DelTree(App, True, True, True)
     else
     begin
+      DelTree(App + '\venv', True, True, True);
       DelTree(App + '\python', True, True, True);
       DelTree(App + '\_setup', True, True, True);
       DelTree(App + '\bin', True, True, True);
