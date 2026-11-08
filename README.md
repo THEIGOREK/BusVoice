@@ -7,7 +7,7 @@
 **Современный автоинформатор остановок для openOMSI**
 голос · музыка · радио · авто-режим · 5 языков
 
-[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)
+[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Setup.exe)
 
 [![Версия](https://img.shields.io/github/v/release/THEIGOREK/BusVoice?style=flat-square&color=17A398&label=версия)](https://github.com/THEIGOREK/BusVoice/releases/latest)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)
@@ -59,7 +59,7 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe)** и запустите (Windows 10/11, 64 бит).
+1. Скачайте **[BusVoice_Setup.exe](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Setup.exe)** (установщик на Inno Setup — привычный Windows формат, собирается автоматически в GitHub Actions) и запустите (Windows 10/11, 64 бит). Если Windows или антивирус не пускает, запасной вариант — [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe).
 2. Выберите язык (русский, English, Беларуская, Українська, Қазақша), прочитайте приветствие и укажите папку установки.
 3. Установщик **сам скачает Python 3.12.0** (только для BusVoice, внутрь вашей папки), программу и библиотеки. Нужен интернет, права администратора не нужны.
 4. В конце оставьте галочки **«Запустить BusVoice»** и **«Установить ярлык на рабочем столе»**. Ярлык также создаётся в папке программы и в меню «Пуск».
