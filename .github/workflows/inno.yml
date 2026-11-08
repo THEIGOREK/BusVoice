@@ -1,0 +1,56 @@
+name: Inno Setup
+
+# Собирает установщик BusVoice_Setup.exe на Inno Setup (самый привычный антивирусам формат установщика)
+# и кладёт его в Release той же версии.
+on:
+  push:
+    branches: [main]
+    paths: [update.json, update.zip, installer/**, .github/workflows/inno.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Версия и содержимое
+        shell: pwsh
+        run: |
+          $ver = (Get-Content update.json -Raw | ConvertFrom-Json).version
+          "BV_VERSION=$ver" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+          Expand-Archive -Path update.zip -DestinationPath payload -Force
+          if (-not (Test-Path payload\busvoice.py)) { throw "в update.zip нет busvoice.py" }
+      - name: Inno Setup
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "C:\Program Files (x86)\Inno Setup 6\ISCC.exe")) { choco install innosetup -y --no-progress }
+      - name: Языки (белорусский и казахский — неофициальные)
+        shell: pwsh
+        run: |
+          foreach ($l in 'Belarusian','Kazakh') {
+            try {
+              Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/jrsoftware/issrc/main/Files/Languages/Unofficial/$l.isl" -OutFile "installer\$l.isl"
+              Write-Host "ok $l"
+            } catch { Write-Host "нет файла $l" }
+          }
+      - name: Сборка
+        shell: pwsh
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\BusVoice.iss
+          if ($LASTEXITCODE -ne 0) { throw "ISCC failed" }
+          Get-Item out\BusVoice_Setup.exe | Format-List Name,Length
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BusVoice_Setup
+          path: out/BusVoice_Setup.exe
+      - name: В релиз
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "v$env:BV_VERSION"
+          for ($i=0; $i -lt 12; $i++) { gh release view $tag 2>$null | Out-Null; if ($LASTEXITCODE -eq 0) { break }; Start-Sleep 10 }
+          gh release upload $tag out\BusVoice_Setup.exe --clobber
