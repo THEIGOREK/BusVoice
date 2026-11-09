@@ -1,11 +1,11 @@
 name: Release
 
-# При каждой новой версии (обновился update.json) автоматически создаёт Release с этой версией
-# и кладёт в него свежий установщик для игроков.
+# При каждой новой версии (обновился update.json) автоматически создаёт/обновляет Release с этой
+# версией. Сам файл для игроков (BusVoice_Portable.zip) кладёт в него workflow "Portable".
 on:
   push:
     branches: [main]
-    paths: [update.json, BusVoice_Installer.exe]
+    paths: [update.json]
   workflow_dispatch:
 
 permissions:
@@ -28,8 +28,7 @@ jobs:
           else
             gh release create "$TAG" --title "$VER" --notes "$NOTES" --target main --latest
           fi
-          gh release upload "$TAG" BusVoice_Installer.exe --clobber
-          # в релизе остаётся только установщик: лишние старые файлы удаляем
+          # в релизе остаётся только портативная версия: лишнее удаляем
           for A in $(gh release view "$TAG" --json assets --jq '.assets[].name'); do
-            if [ "$A" != "BusVoice_Installer.exe" ] && [ "$A" != "BusVoice_Setup.exe" ] && [ "$A" != "BusVoice_Portable.zip" ]; then gh release delete-asset "$TAG" "$A" -y; fi
+            if [ "$A" != "BusVoice_Portable.zip" ]; then gh release delete-asset "$TAG" "$A" -y; fi
           done

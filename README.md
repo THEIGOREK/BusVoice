@@ -7,11 +7,11 @@
 **Современный автоинформатор остановок для openOMSI**
 голос · музыка · радио · авто-режим · 5 языков
 
-[![Скачать установщик](https://img.shields.io/badge/⬇_Скачать_установщик-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Setup.exe)
+[![Скачать](https://img.shields.io/badge/⬇_Скачать_BusVoice_Portable.zip-17A398?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Portable.zip)
 
 [![Версия](https://img.shields.io/github/v/release/THEIGOREK/BusVoice?style=flat-square&color=17A398&label=версия)](https://github.com/THEIGOREK/BusVoice/releases/latest)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=flat-square&logo=windows&logoColor=white)
-![Python](https://img.shields.io/badge/Python-ставится%20сам-3776AB?style=flat-square&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-уже%20внутри-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Языки](https://img.shields.io/badge/языки-RU%20·%20BE%20·%20UK%20·%20EN%20·%20KZ-FFD666?style=flat-square)
 ![Обновления](https://img.shields.io/badge/обновления-автоматические-17A398?style=flat-square)
 
@@ -59,58 +59,13 @@
 
 ## 📥 Установка
 
-1. Скачайте **[BusVoice_Setup.exe](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Setup.exe)** (установщик на Inno Setup — привычный Windows формат, собирается автоматически в GitHub Actions) и запустите (Windows 10/11, 64 бит). Если Windows или антивирус не пускает, запасной вариант — [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe).
-2. Выберите язык (русский, English, Беларуская, Українська, Қазақша), прочитайте приветствие и укажите папку установки.
-3. Если на компьютере уже есть Python 3.10–3.15, установщик использует его (ставить второй не нужно) и создаёт для BusVoice отдельное окружение `venv` в папке программы. Если Python нет — **сам скачает Python 3.12.0** (внутрь вашей папки), затем программу и библиотеки. Нужен интернет, права администратора не нужны.
-4. В конце оставьте галочки **«Запустить BusVoice»** и **«Установить ярлык на рабочем столе»**. Ярлык также создаётся в папке программы и в меню «Пуск».
-
-**Удаление:** «Параметры → Приложения → BusVoice → Удалить» или ярлык «Удалить BusVoice» (меню «Пуск» / папка программы). Спросит подтверждение и удалит всё без следов: программу, своё окружение и Python (если ставили мы), ярлыки, записи в реестре и папку (данные — по галочке).
-
-> Установщик не подписан цифровой подписью, поэтому Microsoft Defender или браузер могут показать предупреждение — это ложное срабатывание. Он ничем не упакован, открыто делает только описанное выше, а загруженные файлы проверяет по SHA-256 (Python — по зашитому хешу, BusVoice — по `update.json`).
-
-### 📦 Портативная версия (как у openOMSI) — без установки
-
-Ничего не устанавливается и не скачивается после распаковки — всё уже внутри архива, включая свой Python.
+Никакого установщика — скачиваете архив, распаковываете и сразу играете. Внутри уже всё нужное, включая свой Python.
 
 1. Скачайте **[BusVoice_Portable.zip](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Portable.zip)**.
-2. Создайте папку где угодно (например, на рабочем столе) и перетащите туда всё содержимое архива.
-3. Нажмите **BusVoice.exe** — программа сразу запустится. Всё, что нужно, уже в папке, ничего докачивать не надо.
+2. Создайте папку в любом месте (например, на рабочем столе) и перетащите туда всё содержимое архива.
+3. Откройте в этой папке файл **BusVoice.exe** — программа запустится сразу.
 
-Перенести на другой компьютер — просто скопировать всю папку. Удалить программу — удалить папку, ничего в системе не остаётся (в реестр портативная версия не пишет). Минус один: архив заметно больше установщика (внутри свой Python), и автоматическая установка в меню «Пуск» и ярлыков эта версия не делает — для этого нужен установщик выше.
-
-### 🖥️ Если антивирус не пускает ни один установщик — через командную строку
-
-Без единого исполняемого файла: только Python (его ставить так же часто можно с официального сайта) и обычные команды. Антивирусам тут ругаться почти не на что — нет скомпилированного установщика, только скрипт и программа на Python.
-
-1. Поставьте Python 3.10–3.13 с [python.org](https://www.python.org/downloads/) — на экране установки обязательно отметьте галочку **«Add python.exe to PATH»**.
-2. Скачайте [**update.zip**](https://github.com/THEIGOREK/BusVoice/raw/main/update.zip) — это сама программа и библиотеки, обычный архив, не `.exe`. Распакуйте в любую папку (например, `C:\BusVoice`).
-3. В этой папке уже лежит `install.bat` — запустите его двойным кликом. Он сам поставит библиотеки (`pip install -r requirements.txt`) и предложит создать ярлык на рабочем столе.
-4. Если не хотите запускать `.bat` — то же самое вручную: откройте командную строку в папке с программой и выполните
-   ```
-   pip install -r requirements.txt
-   pythonw busvoice.py
-   ```
-
-Обновления дальше программа скачивает сама, как и при обычной установке — командная строка нужна только один раз, для первого запуска.
-
-### 🛟 Если версия не запускается — какую качать
-
-1. **Скачивайте последнюю версию** — [Releases → Latest](https://github.com/THEIGOREK/BusVoice/releases/latest) (сейчас **v1.37.0**, там есть `BusVoice_Setup.exe`). Это основной и рекомендуемый вариант.
-2. **Не запускается или ошибка установки** — сначала удалите прошлую установку («Параметры → Приложения → BusVoice → Удалить») и поставьте заново. Если ругается антивирус — добавьте папку BusVoice в исключения.
-3. **Всё равно не стартует** — возьмите предыдущую версию со [страницы релизов](https://github.com/THEIGOREK/BusVoice/releases) по порядку: **v1.36.1 → v1.36.0 → v1.35.0 → v1.34.1**. В старых релизах установщик называется `BusVoice_Installer.exe`.
-4. Если перестала работать именно новая версия — напишите в [Issues](https://github.com/THEIGOREK/BusVoice/issues) и приложите файлы `data/bvfix_error.log` и `data/auto_diag.log` из папки программы.
-
-> Программа обновляется сама, поэтому после установки старой версии она может предложить обновиться до последней.
-
-<div align="center">
-<img src="docs/img/installer.png" alt="Установщик BusVoice" height="320">
-</div>
-
-> 💡 Ярлык `BusVoice` появляется также в папке программы и в меню «Пуск».
-
-### 🗑️ Удаление
-
-Откройте папку BusVoice и запустите значок **Uninstall** (или «Приложения и возможности» в Windows). В окне нажмите **«Удалить»**. При желании можно сохранить свои карты и маршруты.
+**Как удалить:** удалите всё содержимое папки, после этого удалите саму папку. Больше ничего в системе не остаётся.
 
 ## 🛡 Проверка на вирусы
 
@@ -122,16 +77,12 @@
 | [**1.37.0**](https://www.virustotal.com/gui/file/cba01bf6b5603f81e7428f59b2bc6ea6106ff298324bb75d53fddf873c94a633) | `update.zip` | ✅ чисто (0/66) | 2026-11-09 06:00 UTC | `cba01bf6b5603f81…` |
 | [**1.36.1**](https://www.virustotal.com/gui/file/c1310c395ef68d06b6a56a48a69554bc29d14c630f39f7ba02d3adf4b82e0c4f) | `update.zip` | ✅ чисто (0/65) | 2026-11-08 19:24 UTC | `c1310c395ef68d06…` |
 | [**1.36.0**](https://www.virustotal.com/gui/file/b9f1eaafd0c633713ce65995d845e15895bfbd0d767ce4967680a913feb09ddd) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 14:42 UTC | `b9f1eaafd0c63371…` |
-| [**1.36.0**](https://www.virustotal.com/gui/file/d33cc748a62b7df509ddc0bf47969afe572c49df8df90b6341a7021e8ee4e163) | `BusVoice_Installer.exe` | ⚠️ 3 + 0 (3/71) | 2026-11-08 14:42 UTC | `d33cc748a62b7df5…` |
 | [**1.35.0**](https://www.virustotal.com/gui/file/aa15a99235593e9d6eea3de284735ae517da4e399452b3e56f1975f7191c7b5d) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 14:30 UTC | `aa15a99235593e9d…` |
 | [**1.34.1**](https://www.virustotal.com/gui/file/b0cb90fe05477f218ef088f11281ba31ee9c4b7c973f15f67767f8fa8ef3d318) | `update.zip` | ✅ чисто (0/64) | 2026-11-08 09:23 UTC | `b0cb90fe05477f21…` |
 | [**1.34.0**](https://www.virustotal.com/gui/file/e0a916c5eaf1d5a58e1cfa7c390a6502de212bf0c3209503583d838d82906625) | `update.zip` | ✅ чисто (0/63) | 2026-11-08 09:17 UTC | `e0a916c5eaf1d5a5…` |
-| [**1.34.0**](https://www.virustotal.com/gui/file/8ba2d3505bb23d523040d81492d0af7a491ecc0b70945d25da51b7447bb11eb6) | `BusVoice_Installer.exe` | ⚠️ 3 + 0 (3/70) | 2026-11-08 09:17 UTC | `8ba2d3505bb23d52…` |
 | [**1.33.12**](https://www.virustotal.com/gui/file/874a87f6a97ef3d816abce81708aeda3381747a32840a330653eabd066666803) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 05:47 UTC | `874a87f6a97ef3d8…` |
-| [**1.33.12**](https://www.virustotal.com/gui/file/a4be29179a02d8ddc7ee7efa0d3dd2c1095204683c08ae6b5c924e853f277db9) | `BusVoice_Installer.exe` | ⚠️ 4 + 0 (4/70) | 2026-11-08 06:43 UTC | `a4be29179a02d8dd…` |
 | [**1.33.11**](https://www.virustotal.com/gui/file/bf90990c73d869a485b2a139715747ec0f8af38110b72796734f349d329f59e1) | `update.zip` | ✅ чисто (0/66) | 2026-11-08 04:17 UTC | `bf90990c73d869a4…` |
 | [**1.33.10**](https://www.virustotal.com/gui/file/0200f1f042f7ed95017b122ba887c0de22b27b6bee8a371602899c866af38b87) | `update.zip` | ✅ чисто (0/65) | 2026-11-07 12:22 UTC | `0200f1f042f7ed95…` |
-| [**1.33.10**](https://www.virustotal.com/gui/file/998e138e683a733a24d3034311c6ef83773a336bb3c52ec280e9512d128f5960) | `BusVoice_Installer.exe` | ⚠️ 3 + 0 (3/71) | 2026-11-07 18:33 UTC | `998e138e683a733a…` |
 | [**1.33.9**](https://www.virustotal.com/gui/file/7cea4ff7bc345db6f11d7a0e456dac86eb966a3664d2ca280e9a4bc6ab724116) | `update.zip` | ✅ чисто (0/65) | 2026-11-07 05:03 UTC | `7cea4ff7bc345db6…` |
 | [**1.33.8**](https://www.virustotal.com/gui/file/26162ec46d79e3b3a6cfb276311fbcda576275e1c8bc427485ba4c8f025de7e6) | `update.zip` | ✅ чисто (0/64) | 2026-11-07 04:44 UTC | `26162ec46d79e3b3…` |
 | [**1.33.7**](https://www.virustotal.com/gui/file/ec12ff1b1e6becdab65cef1b0a698166b5959581fd6b4ed1c5cd70abeee29c84) | `update.zip` | ✅ чисто (0/66) | 2026-11-07 04:38 UTC | `ec12ff1b1e6becda…` |
@@ -140,7 +91,6 @@
 | [**1.33.4**](https://www.virustotal.com/gui/file/18d56e7534940babe4dc3280c0329233fce12d1dfe6cca9a0afb836ca33ff5bc) | `update.zip` | ✅ чисто (0/66) | 2026-11-07 04:19 UTC | `18d56e7534940bab…` |
 | [**1.33.3**](https://www.virustotal.com/gui/file/c8e289a77b37422833c10f02b6c2f293114f475d071d93c7336421e7ad6dd136) | `update.zip` | ✅ чисто (0/66) | 2026-11-07 03:52 UTC | `c8e289a77b374228…` |
 | [**1.33.2**](https://www.virustotal.com/gui/file/3cb4c41560d18befdd594d4a35752ca6d1783350e369b87b353e21f69570b351) | `update.zip` | ✅ чисто (0/65) | 2026-11-07 03:46 UTC | `3cb4c41560d18bef…` |
-| [**1.33.2**](https://www.virustotal.com/gui/file/943fddf6dd35d2b4dee07e464e919c65a22f25654d8749161b675b6173539303) | `BusVoice_Installer.exe` | ⚠️ 5 + 0 (5/67) | 2026-11-07 03:46 UTC | `943fddf6dd35d2b4…` |
 | [**1.33.1**](https://www.virustotal.com/gui/file/ca89974e9c8ba8780479f37bc196d23ffbb5542ae855d244405764ece090fe99) | `update.zip` | ✅ чисто (0/60) | 2026-11-06 19:41 UTC | `ca89974e9c8ba878…` |
 | [**1.33.0**](https://www.virustotal.com/gui/file/4290508bd52eaeed1cacec906d9de842988eaf03c55f3d16613900f4dd7896c3) | `update.zip` | ✅ чисто (0/65) | 2026-11-06 19:33 UTC | `4290508bd52eaeed…` |
 | [**1.32.0**](https://www.virustotal.com/gui/file/ff1a62e786d94ad0b0ffbdf57e383759733f32e16f33246890f619bba66685cf) | `update.zip` | ✅ чисто (0/66) | 2026-11-06 14:35 UTC | `ff1a62e786d94ad0…` |
@@ -153,10 +103,9 @@
 | [**1.30.1**](https://www.virustotal.com/gui/file/480653c32c8bc499726fbf88b68f8ee1dc2fbd3fcec251daaab0d10e8ece7e31) | `update.zip` | ✅ чисто (0/61) | 2026-11-06 04:38 UTC | `480653c32c8bc499…` |
 | [**1.30.0**](https://www.virustotal.com/gui/file/12138d35082b0a6872b5226bdae03ecff1ba6c88afd8ccceb56f18e829a42fb9) | `update.zip` | ✅ чисто (0/56) | 2026-11-06 04:22 UTC | `12138d35082b0a68…` |
 | [**1.29.1**](https://www.virustotal.com/gui/file/0f66f893ad20460269c9d9ccf6325f97b889a74fa6086bdbe937ddf73847efda) | `update.zip` | ✅ чисто (0/65) | 2026-11-05 09:45 UTC | `0f66f893ad204602…` |
-| [**1.29.1**](https://www.virustotal.com/gui/file/05c318995187b128d18d77ea7e78a9dc1263506f1432ad3b2313fedcd5cf1d76) | `BusVoice_Installer.exe` | ⚠️ 5 + 0 (5/71) | 2026-11-05 09:45 UTC | `05c318995187b128…` |
 <!-- VT:END -->
 
-**Как проверить самому:** скачайте файл и посчитайте хеш (`certutil -hashfile BusVoice_Installer.exe SHA256` или PowerShell `Get-FileHash`), затем откройте ссылку нужной версии — хеш на странице VirusTotal должен совпасть. Подробнее: [docs/VIRUSTOTAL.md](docs/VIRUSTOTAL.md).
+**Как проверить самому:** скачайте `BusVoice_Portable.zip` и посчитайте хеш (`certutil -hashfile BusVoice_Portable.zip SHA256` или PowerShell `Get-FileHash`), затем откройте ссылку нужной версии — хеш на странице VirusTotal должен совпасть. Подробнее: [docs/VIRUSTOTAL.md](docs/VIRUSTOTAL.md).
 
 > Единичные срабатывания малоизвестных антивирусов на упакованные программы (в том числе на Python-приложения) бывают ложными.
 
@@ -199,30 +148,13 @@
 ## ❓ Частые вопросы
 
 <details>
-<summary><b>Антивирус ругается на установщик</b></summary>
+<summary><b>Антивирус ругается на BusVoice.exe внутри архива</b></summary>
 
-Установщик не имеет платной цифровой подписи, поэтому Windows SmartScreen и некоторые антивирусы могут показать предупреждение. Нажмите «Подробнее» → «Выполнить в любом случае». Файл можно проверить на [VirusTotal](https://www.virustotal.com/).
-</details>
+Это **ложное срабатывание**: `BusVoice.exe` не подписан платным сертификатом, а такие непромышленные программы часто блокируют браузеры и некоторые антивирусы — особенно те, что запускают другие программы (а BusVoice.exe запускает свой Python). Нажмите «Подробнее» → «Выполнить в любом случае». Отчёты проверки лежат в разделе «🛡 Проверка на вирусы» выше, файл можно проверить и самостоятельно на [VirusTotal](https://www.virustotal.com/).
 
-<details>
-<summary><b>Браузер или Windows пишет «вирус» и не даёт скачать .exe</b></summary>
+**Если Chrome / Edge блокирует скачивание архива:** откройте список загрузок (Ctrl+J) → нажмите **«⋮» / «…» у файла → «Сохранить»** (в Edge — «Сохранить» → «Всё равно сохранить»).
 
-Это **ложное срабатывание**: установщик не подписан платным сертификатом, а он упакован (внутри — Python и скрипты установки), такие файлы часто блокируют браузеры и некоторые антивирусы. Отчёты проверки лежат в разделе «🛡 Проверка на вирусы» выше.
-
-**Если Chrome / Edge блокирует скачивание:** откройте список загрузок (Ctrl+J) → нажмите **«⋮» / «…» у файла → «Сохранить»** (в Edge — «Сохранить» → «Всё равно сохранить»). Затем запустите файл: «Подробнее» → «Выполнить в любом случае».
-
-**Если антивирус удаляет файл:** добавьте папку загрузок в исключения, либо установите **без .exe**:
-
-1. Установите [Python 3.12](https://www.python.org/downloads/) (галочка «Add python.exe to PATH»).
-2. Скачайте [update.zip](https://github.com/THEIGOREK/BusVoice/raw/main/update.zip) и распакуйте в любую папку, например `C:\BusVoice`.
-3. Откройте в этой папке командную строку и выполните: `python -m pip install -r requirements.txt`
-4. Запускайте: `python busvoice.py` (или создайте ярлык на этот файл). Обновления дальше приходят сами.
-</details>
-
-<details>
-<summary><b>Установщик пишет про Python</b></summary>
-
-Установщик содержит Python 3.12 и ставит его сам. Если на ПК уже стоит другая сборка Python, она будет использована. Если ошибка повторяется, пришлите скриншот в [Issues](https://github.com/THEIGOREK/BusVoice/issues).
+**Если антивирус удаляет файл:** добавьте папку с BusVoice в исключения антивируса (в Защитнике Windows: «Защита от вирусов и угроз» → «Управление настройками» → «Исключения» → «Добавить исключение» → «Папка»).
 </details>
 
 <details>
@@ -275,9 +207,9 @@
 
 **BusVoice** is a modern stop announcer for **openOMSI**: signal → "Next stop" → stop name, with neural voices (BEL · UK · KAZ · ENG · RUS) when no audio file exists, music & radio, an in-game mini panel, hotkeys, themes, 5 interface languages and an **automatic mode for openOMSI** (no key presses needed).
 
-**Install:** download [BusVoice_Installer.exe](https://github.com/THEIGOREK/BusVoice/raw/main/BusVoice_Installer.exe), choose a language and folder, click *Install*. Python and libraries are installed automatically (no admin rights). The app updates itself and shows what's new after each update.
+**Install:** download [BusVoice_Portable.zip](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Portable.zip), extract it into any folder, and open **BusVoice.exe** inside that folder. No installer, nothing else to download — its own Python is already bundled. To remove it, delete the folder.
 
-Source code is not published; this repository hosts the installer and the update packages.
+Source code is not published; this repository hosts the portable build and the update packages.
 </details>
 
 <div align="center"><sub>© THEIGOREK · BusVoice</sub></div>
