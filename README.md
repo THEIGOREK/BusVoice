@@ -61,6 +61,10 @@
 
 Никакого установщика — скачиваете архив, распаковываете и сразу играете. Внутри уже всё нужное, включая свой Python.
 
+<div align="center">
+<img src="docs/img/install_steps.png" alt="Установка BusVoice: скачать архив, перетащить файлы в папку, открыть BusVoice.exe" width="100%">
+</div>
+
 1. Скачайте **[BusVoice_Portable.zip](https://github.com/THEIGOREK/BusVoice/releases/latest/download/BusVoice_Portable.zip)**.
 2. Создайте папку в любом месте (например, на рабочем столе) и перетащите туда всё содержимое архива.
 3. Откройте в этой папке файл **BusVoice.exe** — программа запустится сразу.
