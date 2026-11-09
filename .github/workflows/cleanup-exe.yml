@@ -1,0 +1,24 @@
+name: Cleanup old exe assets
+
+# Разовая уборка: во всех релизах убирает BusVoice_Installer.exe / BusVoice_Setup.exe,
+# оставляя только BusVoice_Portable.zip. Запускается вручную.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove old installer assets from every release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for TAG in $(gh api repos/${{ github.repository }}/releases --paginate --jq '.[].tag_name'); do
+            for A in $(gh api repos/${{ github.repository }}/releases/tags/"$TAG" --jq '.assets[] | select(.name=="BusVoice_Installer.exe" or .name=="BusVoice_Setup.exe") | .id'); do
+              echo "deleting asset $A from $TAG"
+              gh api -X DELETE repos/${{ github.repository }}/releases/assets/"$A"
+            done
+          done
