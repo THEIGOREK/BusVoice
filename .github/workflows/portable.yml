@@ -1,0 +1,104 @@
+name: Portable
+
+# Собирает BusVoice_Portable.zip: распакуй куда угодно и нажми BusVoice.exe — внутри уже
+# свой Python и все библиотеки, скачивать больше ничего не нужно (как у openOMSI).
+on:
+  push:
+    branches: [main]
+    paths: [update.json, update.zip, launcher/**, .github/workflows/portable.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Версия
+        shell: pwsh
+        run: |
+          $ver = (Get-Content update.json -Raw | ConvertFrom-Json).version
+          "BV_VERSION=$ver" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          architecture: x64
+
+      - name: Проверка, что в этом Python есть tkinter
+        shell: pwsh
+        run: python -c "import tkinter; print('tkinter ok')"
+
+      - name: Распаковка программы (update.zip)
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path portable | Out-Null
+          Expand-Archive -Path update.zip -DestinationPath portable -Force
+          Remove-Item -Recurse -Force portable\data -ErrorAction SilentlyContinue
+          # нужна только папка bin под версию интерпретера, которую кладём ниже (3.12 → "312")
+          Get-ChildItem portable\bin -Directory | Where-Object { $_.Name -ne "312" } | Remove-Item -Recurse -Force
+          if (-not (Test-Path portable\bin\312)) { throw "нет portable\bin\312 — проверь update.zip" }
+
+      - name: Установка библиотек прямо в этот Python
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --no-warn-script-location -r portable\requirements.txt
+
+      - name: Копируем сам Python (вместе с tkinter и библиотеками) в portable\python
+        shell: pwsh
+        run: |
+          $py = python -c "import sys; print(sys.prefix)"
+          Write-Host "Python prefix: $py"
+          New-Item -ItemType Directory -Force -Path portable\python | Out-Null
+          Copy-Item "$py\*" "portable\python\" -Recurse -Force
+          # тесты, __pycache__ и установочные файлы не нужны — уменьшаем размер архива
+          Get-ChildItem portable\python -Recurse -Directory -Filter "__pycache__" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+          Get-ChildItem portable\python -Recurse -Directory -Filter "test" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+          Get-ChildItem portable\python -Recurse -Directory -Filter "tests" | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+          Remove-Item portable\python\tcl\tk8.6\demos -Recurse -Force -ErrorAction SilentlyContinue
+          if (-not (Test-Path "portable\python\pythonw.exe")) { throw "в скопированном Python нет pythonw.exe" }
+          if (-not (Test-Path "portable\python\DLLs\_tkinter.pyd")) { throw "в скопированном Python нет _tkinter.pyd (tkinter)" }
+
+      - name: Кладём запускалку BusVoice.exe
+        shell: pwsh
+        run: Copy-Item launcher\BusVoice.exe portable\BusVoice.exe -Force
+
+      - name: Самопроверка — запускаем BusVoice.exe и ждём окно
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath "portable\BusVoice.exe" -WorkingDirectory "portable" -PassThru
+          Start-Sleep -Seconds 12
+          $win = Get-Process | Where-Object { $_.MainWindowTitle -like "*BusVoice*" }
+          if (-not $win) {
+            Get-ChildItem portable\data -ErrorAction SilentlyContinue
+            if (Test-Path portable\data\crash.log) { Write-Host (Get-Content portable\data\crash.log -Raw) }
+            throw "окно BusVoice не появилось за 12 секунд"
+          }
+          Write-Host "окно появилось, всё запускается"
+          Stop-Process -Name "pythonw" -ErrorAction SilentlyContinue
+          Stop-Process -Name "BusVoice" -ErrorAction SilentlyContinue
+          Remove-Item -Recurse -Force portable\data -ErrorAction SilentlyContinue
+
+      - name: Архив
+        shell: pwsh
+        run: |
+          Compress-Archive -Path portable\* -DestinationPath BusVoice_Portable.zip -CompressionLevel Optimal
+          Get-Item BusVoice_Portable.zip | Format-List Name, Length
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BusVoice_Portable
+          path: BusVoice_Portable.zip
+
+      - name: В релиз
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $tag = "v$env:BV_VERSION"
+          for ($i=0; $i -lt 12; $i++) { gh release view $tag 2>$null | Out-Null; if ($LASTEXITCODE -eq 0) { break }; Start-Sleep 10 }
+          gh release upload $tag BusVoice_Portable.zip --clobber
