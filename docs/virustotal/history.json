@@ -368,5 +368,15 @@
   "total": 65,
   "date": "2026-11-14 04:50 UTC",
   "done": true
+ },
+ {
+  "version": "1.42.0-beta",
+  "file": "update.zip",
+  "sha256": "21a664e35efcd0fe1205cea0a4b48fe254bca7b77543d59ea80f32801a49c78e",
+  "malicious": 0,
+  "suspicious": 0,
+  "total": 66,
+  "date": "2026-11-14 09:51 UTC",
+  "done": true
  }
 ]
