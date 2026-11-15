@@ -82,6 +82,7 @@
 | [**1.42.1-beta**](https://www.virustotal.com/gui/file/3d9e0bd5cc4fe850b1170891f024008b3e1451f7fe85fb5c8e8cb1e311a2996a) | `update.zip` | ✅ чисто (0/64) | 2026-11-14 10:02 UTC | `3d9e0bd5cc4fe850…` |
 | [**1.42.2-beta**](https://www.virustotal.com/gui/file/3df0dded7a7377555c6704960ab8f6801836bde364abbe437dbd8ace6ced304f) | `update.zip` | ✅ чисто (0/63) | 2026-11-14 10:15 UTC | `3df0dded7a737755…` |
 | [**1.42.3-beta**](https://www.virustotal.com/gui/file/c1d71e470c1e4df33765624d94547657cc41a4dd7adfd69cc7fd9aa3cffd6ce2) | `update.zip` | ✅ чисто (0/64) | 2026-11-14 15:21 UTC | `c1d71e470c1e4df3…` |
+| [**1.42.4-beta**](https://www.virustotal.com/gui/file/d12d12eb3ba93d75e7ddc2090afaf8484c8f6612ed03a82090d6575460cc739c) | `update.zip` | ✅ чисто (0/65) | 2026-11-15 08:42 UTC | `d12d12eb3ba93d75…` |
 | [**1.41.0-beta**](https://www.virustotal.com/gui/file/e51dd54ca3f9c2ed26bc5c9afce7ede889be30f87bbe72bf2c21ccb8b491f0de) | `update.zip` | ✅ чисто (0/65) | 2026-11-13 09:42 UTC | `e51dd54ca3f9c2ed…` |
 | [**1.41.1-beta**](https://www.virustotal.com/gui/file/73377c1c4db3be8e03fc4046c3f1a6d5e2aabd74030bab5c5c3cb9e57b14183f) | `update.zip` | ✅ чисто (0/66) | 2026-11-13 19:48 UTC | `73377c1c4db3be8e…` |
 | [**1.41.2-beta**](https://www.virustotal.com/gui/file/8f8c1d7f421d22bbb6c2bc6a0afe7db2695af2bdd259010ff577384668a1121b) | `update.zip` | ✅ чисто (0/66) | 2026-11-13 20:22 UTC | `8f8c1d7f421d22bb…` |
