@@ -78,6 +78,7 @@
 <!-- VT:START -->
 | Версия | Файл | Результат | Проверено | SHA-256 |
 |---|---|---|---|---|
+| [**1.44.0-beta**](https://www.virustotal.com/gui/file/761673665eb9231481cfa667f003bdd96c6885b13dcf3686bf6894b27ed87429) | `update.zip` | ✅ чисто (0/65) | 2026-11-17 05:34 UTC | `761673665eb92314…` |
 | [**1.43.0-beta**](https://www.virustotal.com/gui/file/b0dd366f09d799cbc18676de3f57381d1b434a8ac5f80527b5c221f6a05ffa86) | `update.zip` | ✅ чисто (0/65) | 2026-11-15 19:21 UTC | `b0dd366f09d799cb…` |
 | [**1.43.1-beta**](https://www.virustotal.com/gui/file/6b0e1440dbaeb1cbe765c5b9d46ec86d6a3e3957711b94b21423733fa292e6e9) | `update.zip` | ✅ чисто (0/65) | 2026-11-16 04:13 UTC | `6b0e1440dbaeb1cb…` |
 | [**1.42.0-beta**](https://www.virustotal.com/gui/file/21a664e35efcd0fe1205cea0a4b48fe254bca7b77543d59ea80f32801a49c78e) | `update.zip` | ✅ чисто (0/66) | 2026-11-14 09:51 UTC | `21a664e35efcd0fe…` |
