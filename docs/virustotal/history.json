@@ -552,11 +552,11 @@
  {
   "version": "1.52.0-beta",
   "file": "update.zip",
-  "sha256": "96eaa54e4a977dba3f6fa6f7925058944ad20555b9f48796f416e2c98f40218a",
+  "sha256": "77d66388e14a66a65e6fb023406e29a55d25f2e5e7329684dbbaeb800624fbb0",
   "malicious": 0,
   "suspicious": 0,
   "total": 64,
-  "date": "2026-11-24 04:56 UTC",
+  "date": "2026-11-24 12:04 UTC",
   "done": true
  }
 ]
