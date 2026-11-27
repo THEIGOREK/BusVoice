@@ -62,6 +62,7 @@
 | [**1.30.1**](https://www.virustotal.com/gui/file/480653c32c8bc499726fbf88b68f8ee1dc2fbd3fcec251daaab0d10e8ece7e31) | `update.zip` | ✅ чисто (0/61) | 2026-11-06 04:38 UTC | `480653c32c8bc499…` |
 | [**1.30.0**](https://www.virustotal.com/gui/file/12138d35082b0a6872b5226bdae03ecff1ba6c88afd8ccceb56f18e829a42fb9) | `update.zip` | ✅ чисто (0/56) | 2026-11-06 04:22 UTC | `12138d35082b0a68…` |
 | [**1.29.1**](https://www.virustotal.com/gui/file/0f66f893ad20460269c9d9ccf6325f97b889a74fa6086bdbe937ddf73847efda) | `update.zip` | ✅ чисто (0/65) | 2026-11-05 09:45 UTC | `0f66f893ad204602…` |
+| [**1.0.0**](https://www.virustotal.com/gui/file/d5c85e2c8c663912450ad390775ce3604aaa14738d9638ccbc29298a02bf5f10) | `update.zip` | ✅ чисто (0/65) | 2026-11-27 01:21 UTC | `d5c85e2c8c663912…` |
 
 ## Как проверить самому
 
